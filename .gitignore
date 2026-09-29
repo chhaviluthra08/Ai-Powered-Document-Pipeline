@@ -1,0 +1,50 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Database & Vector Store
+*.db
+*.db-shm
+*.db-wal
+chroma_db/
+
+# macOS / OS generated
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.swp
+*.swo

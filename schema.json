@@ -1,0 +1,150 @@
+{
+  "type": "object",
+  "properties": {
+    "document_type": {
+      "type": "object",
+      "properties": {
+        "value": { "type": "string", "enum": ["Invoice", "Purchase Order", "Bank Statement", "Form", "Report", "Other"] },
+        "confidence_score": { "type": "integer", "minimum": 0, "maximum": 100 }
+      },
+      "required": ["value", "confidence_score"],
+      "additionalProperties": false
+    },
+    "invoice_number": {
+      "type": "object",
+      "properties": {
+        "value": { "type": ["string", "null"] },
+        "confidence_score": { "type": "integer", "minimum": 0, "maximum": 100 }
+      },
+      "required": ["value", "confidence_score"],
+      "additionalProperties": false
+    },
+    "invoice_date": {
+      "type": "object",
+      "properties": {
+        "value": { "type": ["string", "null"], "description": "ISO 8601 format YYYY-MM-DD" },
+        "confidence_score": { "type": "integer", "minimum": 0, "maximum": 100 }
+      },
+      "required": ["value", "confidence_score"],
+      "additionalProperties": false
+    },
+    "vendor_name": {
+      "type": "object",
+      "properties": {
+        "value": { "type": ["string", "null"] },
+        "confidence_score": { "type": "integer", "minimum": 0, "maximum": 100 }
+      },
+      "required": ["value", "confidence_score"],
+      "additionalProperties": false
+    },
+    "customer_name": {
+      "type": "object",
+      "properties": {
+        "value": { "type": ["string", "null"] },
+        "confidence_score": { "type": "integer", "minimum": 0, "maximum": 100 }
+      },
+      "required": ["value", "confidence_score"],
+      "additionalProperties": false
+    },
+    "purchase_order_number": {
+      "type": "object",
+      "properties": {
+        "value": { "type": ["string", "null"] },
+        "confidence_score": { "type": "integer", "minimum": 0, "maximum": 100 }
+      },
+      "required": ["value", "confidence_score"],
+      "additionalProperties": false
+    },
+    "total_amount": {
+      "type": "object",
+      "properties": {
+        "value": { "type": ["number", "null"] },
+        "confidence_score": { "type": "integer", "minimum": 0, "maximum": 100 }
+      },
+      "required": ["value", "confidence_score"],
+      "additionalProperties": false
+    },
+    "tax_amount": {
+      "type": "object",
+      "properties": {
+        "value": { "type": ["number", "null"] },
+        "confidence_score": { "type": "integer", "minimum": 0, "maximum": 100 }
+      },
+      "required": ["value", "confidence_score"],
+      "additionalProperties": false
+    },
+    "currency": {
+      "type": "object",
+      "properties": {
+        "value": { "type": ["string", "null"], "description": "3-letter currency code, e.g. USD" },
+        "confidence_score": { "type": "integer", "minimum": 0, "maximum": 100 }
+      },
+      "required": ["value", "confidence_score"],
+      "additionalProperties": false
+    },
+    "due_date": {
+      "type": "object",
+      "properties": {
+        "value": { "type": ["string", "null"], "description": "ISO 8601 format YYYY-MM-DD" },
+        "confidence_score": { "type": "integer", "minimum": 0, "maximum": 100 }
+      },
+      "required": ["value", "confidence_score"],
+      "additionalProperties": false
+    },
+    "line_items": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "description": { "type": ["string", "null"] },
+              "quantity": { "type": ["number", "null"] },
+              "unit_price": { "type": ["number", "null"] }
+            },
+            "required": ["description", "quantity", "unit_price"],
+            "additionalProperties": false
+          }
+        },
+        "confidence_score": { "type": "integer", "minimum": 0, "maximum": 100 }
+      },
+      "required": ["value", "confidence_score"],
+      "additionalProperties": false
+    },
+    "email_metadata": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "object",
+          "properties": {
+            "sender": { "type": ["string", "null"] },
+            "subject": { "type": ["string", "null"] },
+            "received_date": { "type": ["string", "null"], "description": "ISO 8601 format" },
+            "message_id": { "type": ["string", "null"] }
+          },
+          "required": ["sender", "subject", "received_date"],
+          "additionalProperties": false
+        },
+        "confidence_score": { "type": "integer", "minimum": 0, "maximum": 100 }
+      },
+      "required": ["value", "confidence_score"],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "document_type",
+    "invoice_number",
+    "invoice_date",
+    "vendor_name",
+    "customer_name",
+    "purchase_order_number",
+    "total_amount",
+    "tax_amount",
+    "currency",
+    "due_date",
+    "line_items",
+    "email_metadata"
+  ],
+  "additionalProperties": false
+}
