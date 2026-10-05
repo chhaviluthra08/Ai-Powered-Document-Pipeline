@@ -1,4 +1,4 @@
-# AI-Powered Document Processing Platform (MVP)
+# AI-Powered Document Processing Platform
 
 This project is a minimum viable product (MVP) for an end-to-end AI-powered document processing platform. It ingests simulated email attachments, extracts and classifies text, extracts structured data according to a fixed schema, evaluates confidence, and provides a human-in-the-loop review interface.
 
